@@ -2,12 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
-//
+
 const app = express();
 const PORT = 3000;
 
 app.use(cors());
-app.use(cors({ origin: 'const API_URL = window.location.origin' }));
 
 // Endpoint to get the list of songs
 app.get('/songs', (req, res) => {
@@ -36,14 +35,3 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
     res.send('Backend is working!');
 });
-
-
-
-// Serve frontend static files
-app.use(express.static(path.join(__dirname, '../frontend')));
-
-// Default route for SPA
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/index.html'));
-});
-
