@@ -35,3 +35,14 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
     res.send('Backend is working!');
 });
+
+const path = require('path');
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Default route for SPA
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
