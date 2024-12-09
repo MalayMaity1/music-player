@@ -1,4 +1,5 @@
-const API_URL = 'const API_URL = window.location.origin';
+const API_URL = window.location.origin;
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const songListDiv = document.getElementById('song-list');
