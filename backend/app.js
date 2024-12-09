@@ -7,6 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors());
+app.use(cors({ origin: '' }));
 
 // Endpoint to get the list of songs
 app.get('/songs', (req, res) => {
