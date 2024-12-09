@@ -1,4 +1,4 @@
-const API_URL = 'https://music-player-9.onrender.com';
+const API_URL = 'https://music-player-10.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
     const songListDiv = document.getElementById('song-list');
